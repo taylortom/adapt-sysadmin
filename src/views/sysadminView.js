@@ -2,7 +2,6 @@
 define(function(require){
   var Backbone = require('backbone');
   var OriginView = require('core/views/originView');
-  var PluginView = require('./sysadminPluginView');
 
   var SysadminView = OriginView.extend({
     tagName: 'div',
@@ -17,8 +16,8 @@ define(function(require){
 
     postRender: function() {
       for(var i = 0, count = this.plugins.length; i < count; i++) {
-        var plugin = this.plugins[i];
-        console.log(plugin);
+        var view = new this.plugins[i]();
+        $('.plugins', this.$el).append(view.$el);
       }
       this.setViewToReady();
     }
