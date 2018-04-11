@@ -13,11 +13,12 @@ define(function(require) {
   });
 
   Origin.on('router:' + FEATURE_NAME, function(location, subLocation, action) {
-    Origin.trigger('location:title:update', {
-      title: Origin.l10n.t('app.' + FEATURE_NAME)
-    });
-    Origin.sidebar.addView(new SysadminSidebarView().$el);
-    Origin.contentPane.setView(SysadminView, { plugins: plugins });
+    Origin.trigger('location:title:update', { title: Origin.l10n.t('app.' + FEATURE_NAME) });
+    var opts = {
+      plugins: plugins
+    };
+    Origin.sidebar.addView(new SysadminSidebarView(opts).$el);
+    Origin.contentPane.setView(SysadminView, opts);
   });
 
   Origin.on(FEATURE_NAME + ':addView', function(pluginData) {

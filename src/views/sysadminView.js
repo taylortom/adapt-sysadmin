@@ -16,7 +16,7 @@ define(function(require){
 
     postRender: function() {
       for(var i = 0, count = this.plugins.length; i < count; i++) {
-        var view = new this.plugins[i]();
+        var view = new this.plugins[i].view();
         $('.plugins', this.$el).append(view.$el);
       }
       this.setViewToReady();
