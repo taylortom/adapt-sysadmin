@@ -29,7 +29,7 @@ define(function(require) {
     onButtonclick: function(event) {
       event && event.preventDefault();
       var $pluginDiv = $('.sysadmin-plugin.' + $(event.currentTarget).attr('data-name'));
-      $('.contentPane').animate({ scrollTop: $pluginDiv.offset().top }, 2000);
+      $('.contentPane').scrollTo($pluginDiv, 300);
     }
   }, {
     template: 'sysadminSidebar'
