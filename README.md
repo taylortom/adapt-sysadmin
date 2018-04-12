@@ -4,7 +4,7 @@ This is an Adapt **authoring tool plugin** which acts as a container for arbitra
 
 ## Installation
 
-1. Copy the contents of `src` `/frontend/src/plugins/sysadmin` in your authoring tool folder.
+1. Copy the contents of `src` `/frontend/src/plugins/sysadmin` in your authoring tool folder. _**Failure to name the root folder `sysadmin` will likely stop child plugins working.**_
 2. That’s it!
 
 _**Note:** this plugin requires other child plugins to be installed to be useful._
